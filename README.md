@@ -1,2 +1,5 @@
 # guruguru
-Mostly from eaquira but with advanced code and useful server-sided tools
+For IoT washing machines in China
+
+This is a fork of 'eaquira'
+
