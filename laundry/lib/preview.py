@@ -1,7 +1,7 @@
 import json
 
 from lib.sdgb import sdgb_api
-from settings import userId
+from musicdata import userId
 
 def preview(userId):
     data = json.dumps({
