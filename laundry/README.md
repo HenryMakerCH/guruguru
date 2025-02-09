@@ -7,9 +7,16 @@ That's it! You're now ready to use the function of the whole package!
 
 # Usage
 `authlite.py` - get the latest update pack from Laundry Network.
+
 `mapstock.py` - stores 99km for trip to your account.
+
 `music.py` - upload the muic data read from `musicdata.py`.
+
 `prev.py` - type in an userId and get a short preview of the account.
+
 `ticket.py` - acquire 6x boost ticket.
+
 `unlock.py` - unlock a dedicated music (WIP)
+
 `unlock.py` - unlock all musics (WIP)
+
