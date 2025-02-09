@@ -19,7 +19,7 @@ elif level == "白":
 playCount = input("游玩次数：")
 
 achievement = input("完成度（%）：")
-achievement = int(achievement) * 10000
+achievement = int(float(achievement) * 10000)
 if achievement >= 1005000:
     scoreRank = 13
 elif achievement >= 1000000:
