@@ -2,7 +2,9 @@ Please use `pip install -r requirements.txt` if you're new here.
 
 # Before Use
 First edit `settings.py` and set up the information of your washing machine.
-Second, run `write_musicdata.py` to create `musicdata.py` that stores your user information. You can only type `userId`.
+
+Second, run `write_musicdata.py` to create `musicdata.py` that stores your user information. You can type `userId` only.
+
 That's it! You're now ready to use the function of the whole package!
 
 # Usage
@@ -18,3 +20,4 @@ That's it! You're now ready to use the function of the whole package!
 
 `playerdata.py` - request player data one by one and create a csv file contains scanned data.
 
+`get_api.py` - a tool to get data from api, similar to `prev.py` but api name is customizable.
