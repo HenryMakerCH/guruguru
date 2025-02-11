@@ -16,7 +16,5 @@ That's it! You're now ready to use the function of the whole package!
 
 `ticket.py` - acquire 6x boost ticket.
 
-`unlock.py` - unlock a dedicated music (WIP)
-
-`unlock.py` - unlock all musics (WIP)
+`playerdata.py` - request player data one by one and create a csv file contains scanned data.
 
