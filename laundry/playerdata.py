@@ -2,6 +2,7 @@ import csv
 import json
 import io
 import sys
+import time
 
 from lib.sdgb import sdgb_api
 from lib.preview import preview
@@ -10,18 +11,21 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 
 begin = int(input("Begin:"))
 end = int(input("End:"))
-errors = 0
+totalRetries = 0
 nulls = 0
 players = 0
+retries = 0
 
 for userId in range(begin,end):
-    try:
-        playerPreview = json.loads(preview(userId))
-    except ValueError as e:
-        print(f"{userId} Error occurred: {e}",flush=True)
-        errors += 1
-        userId -= 1
-        continue
+    while retries < 5:
+        try:
+            playerPreview = json.loads(preview(userId))
+            break
+        except ValueError as e:
+            print(f"{userId} Error occurred: {e}",flush=True)
+            totalRetries += 1
+            time.sleep(1)
+        retries += 1
     if playerPreview["userId"] == None:
         print (f"{userId},No Player",flush=True)
         nulls += 1
@@ -36,5 +40,5 @@ for userId in range(begin,end):
         writer = csv.writer(f)
         writer.writerow([userId,userName,playerRating])
 print("========Completed========")
-print(f"Scan completed from {begin} to {end} with {errors} errors.")
-print(f"Scanned {players} players, {nulls} nulls in total.")
+print(f"Scan completed from {begin} to {end} with {totalRetries} retries.")
+print(f"Scanned {end - begin} userIds, {players} players and {nulls} nulls in total.")
