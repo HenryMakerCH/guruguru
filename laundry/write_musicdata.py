@@ -1,22 +1,22 @@
 import json
 
-userId = input("你的UserId：")
+userId = int(input("你的UserId："))
 
-musicId = input("乐曲ID：")
+musicId = int(input("乐曲ID："))
 
 level = input("谱面难度(绿黄红紫白)：")#Basic=0,Re:Master=4
-if level == "绿":
+if level == "绿" or level == "Basic" :
     level = 0
-elif level == "黄":
+elif level == "黄" or level == "Advanced" :
     level = 1
-elif level == "红":
+elif level == "红" or level == "Expert" :
     level = 2
-elif level == "紫":
+elif level == "紫" or level == "Master" :
     level = 3
-elif level == "白":
+elif level == "白" or level == "Re:Master" :
     level = 4
     
-playCount = input("游玩次数：")
+playCount = int(input("游玩次数："))
 
 achievement = input("完成度（%）：")
 achievement = int(float(achievement) * 10000)
@@ -49,10 +49,8 @@ elif achievement >= 500000:
 elif achievement >= 0:
     scoreRank = 0
 
-
-
 comboStatus = input("连击状态（无 FC FC+ AP AP+）：")
-if comboStatus == '无' or '':
+if comboStatus == '无' or comboStatus == '' :
     comboStatus = 0
 elif comboStatus == 'FC':
     comboStatus = 1
@@ -64,7 +62,7 @@ elif comboStatus == 'AP+':
     comboStatus = 4
     
 syncStatus = input("同步状态（无 FS FS+ FDX FDX+）：")
-if syncStatus == '无' or '':
+if syncStatus == '无' or syncStatus == '' :
     syncStatus = 0
 elif syncStatus == 'FS':
     syncStatus = 1
@@ -75,7 +73,7 @@ elif syncStatus == 'FDX':
 elif syncStatus == 'FDX+':
     syncStatus = 4
     
-deluxscoreMax = input("DX分数：")
+deluxscoreMax = int(input("DX分数："))
 
 
 music_data = ({
@@ -96,3 +94,5 @@ with open('musicdata.py','w') as f:
     f.write('\n\nmusic_data = (')
     json.dump(music_data,f,indent = 2)
     f.write(')')
+
+print ('成功写入 musicdata.py')
