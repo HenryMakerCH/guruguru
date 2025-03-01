@@ -1,6 +1,6 @@
 import json
 
-from lib.sdgb import sdgb_api
+from sdgb import sdgb_api
 
 def login(userId):
     data = json.dumps({
